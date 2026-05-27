@@ -16,7 +16,7 @@ Possui 3 milhões de Avaliações, e cerca de 2 milhões e 100 mil diferentes li
 
 **Colunas Utilizadas:**
 -  'Title': Tílulo do livro;
--  'Review/text': 'Texto avaliativo do livro;
+-  'Review/text': Texto avaliativo do livro;
 -  'Review/time': Tempo em que a avaliação foi feita.
 
 [Link da Base de Review de Livros](https://www.kaggle.com/datasets/mohamedbakhet/amazon-books-reviews?select=Books_ra)
