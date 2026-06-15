@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #070A13;
+    --card: rgba(17, 24, 39, 0.82);
+    --card-border: rgba(148, 163, 184, 0.20);
+    --text: #E5E7EB;
+    --muted: #9CA3AF;
+    --accent: #8B5CF6;
+    --accent-2: #06B6D4;
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    background: radial-gradient(circle at 20% 10%, rgba(139, 92, 246, 0.28), transparent 32%),
+                radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.18), transparent 28%),
+                linear-gradient(135deg, #070A13 0%, #0F172A 55%, #111827 100%);
+    color: var(--text);
+}
+.page { min-height: 100vh; padding: 32px; }
+.hero, .main-grid, .comparison-grid { display: grid; gap: 24px; }
+.hero { grid-template-columns: minmax(0, 1.35fr) minmax(320px, .65fr); margin-bottom: 24px; }
+.main-grid { grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr); margin-bottom: 24px; }
+.comparison-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+.hero-content, .hero-panel, .search-card, .explain-card, .method-header, .book-card, .chart {
+    background: var(--card); border: 1px solid var(--card-border); box-shadow: 0 24px 70px rgba(0,0,0,.35);
+    backdrop-filter: blur(12px); border-radius: 28px;
+}
+.hero-content { padding: 42px; }
+.hero-panel, .search-card, .explain-card, .method-header { padding: 28px; }
+.eyebrow { color: #C4B5FD; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 14px; font-size: 13px; }
+h1 { font-size: clamp(38px, 5vw, 70px); line-height: .95; margin: 0 0 18px; letter-spacing: -.06em; }
+h2 { margin: 0 0 12px; font-size: 24px; letter-spacing: -.03em; }
+p, .hint, .method-header p, .hero-content p { color: var(--muted); line-height: 1.55; }
+.panel-label { color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: .12em; font-size: 12px; }
+.model-name { color: white; font-weight: 800; line-height: 1.4; margin: 12px 0; word-break: break-word; }
+.status-card { border-radius: 20px; padding: 18px; border: 1px solid rgba(255,255,255,.10); background: rgba(16,185,129,.12); }
+.status-error { background: rgba(239,68,68,.12); }
+.status-title { font-weight: 800; margin-bottom: 6px; }
+.status-subtitle { color: var(--muted); font-size: 13px; line-height: 1.5; }
+.query-box { width: 100%; min-height: 132px; background: rgba(15, 23, 42, .95); border: 1px solid rgba(148,163,184,.25); color: white; border-radius: 18px; padding: 16px; font-family: Inter, Arial, sans-serif; font-size: 16px; outline: none; resize: vertical; }
+.controls-row { margin: 24px 0 18px; display: grid; gap: 24px; }
+.slider-wrap label { color: white; font-weight: 700; display: block; margin-bottom: 8px; }
+.primary-button { width: 100%; border: none; cursor: pointer; border-radius: 18px; padding: 16px 20px; color: white; font-weight: 900; font-size: 16px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 18px 40px rgba(139,92,246,.28); }
+.examples { margin-top: 24px; }
+.examples-title { color: var(--muted); font-weight: 700; margin-bottom: 8px; }
+.formula { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; }
+.formula span, .metric-pill { padding: 8px 10px; border-radius: 999px; background: rgba(139,92,246,.14); border: 1px solid rgba(139,92,246,.25); color: #DDD6FE; font-size: 12px; font-weight: 800; }
+.feedback { margin-bottom: 20px; }
+.alert { padding: 16px 18px; border-radius: 18px; border: 1px solid rgba(255,255,255,.12); font-weight: 700; }
+.alert-success { background: rgba(16,185,129,.14); color: #A7F3D0; }
+.alert-warning { background: rgba(245,158,11,.14); color: #FDE68A; }
+.alert-error { background: rgba(239,68,68,.14); color: #FECACA; }
+.method-block { display: grid; gap: 18px; }
+.metric-strip { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.cards-grid { display: grid; gap: 18px; }
+.book-card { position: relative; padding: 22px; min-height: 170px; transition: transform .16s ease, border-color .16s ease; }
+.book-card:hover { transform: translateY(-2px); border-color: rgba(139,92,246,.45); }
+.rank-badge { position: absolute; top: 16px; right: 16px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); border-radius: 999px; padding: 8px 12px; font-weight: 900; color: white; font-size: 13px; }
+.book-info { padding-right: 42px; }
+.book-info h3 { font-size: 18px; line-height: 1.25; margin: 0 0 8px; color: white; }
+.book-author { color: var(--muted); margin: 0 0 12px; line-height: 1.4; }
+.category-pill { display: inline-block; padding: 7px 10px; border-radius: 999px; color: #BFDBFE; background: rgba(59,130,246,.12); border: 1px solid rgba(59,130,246,.22); font-weight: 700; font-size: 12px; margin-bottom: 12px; }
+.book-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+.book-meta span { color: #CBD5E1; font-size: 12px; border-radius: 999px; padding: 6px 9px; background: rgba(148,163,184,.12); }
+.chart { padding: 14px; }
+.footer { color: var(--muted); text-align: center; margin-top: 34px; padding: 20px; }
+@media (max-width: 1100px) { .hero, .main-grid, .comparison-grid { grid-template-columns: 1fr; } .page { padding: 18px; } .hero-content { padding: 30px; } }
