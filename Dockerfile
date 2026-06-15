@@ -16,4 +16,4 @@ RUN pip install --no-cache-dir --upgrade pip \
 
 COPY . /app
 EXPOSE 7860
-CMD ["python", "app.py"]
+CMD ["sh", "-c", "gunicorn app:server --bind 0.0.0.0:${PORT:-7860} --timeout 120"]
