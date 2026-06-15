@@ -1,22 +1,36 @@
-# Recomendacao_livros
-Consiste em comparar Técnicas de NLP clássica e DeepLearning em sistemas de recomendação.
+---
+title: Recomendador Semântico de Livros
+emoji: 📚
+colorFrom: indigo
+colorTo: blue
+sdk: docker
+app_port: 7860
+pinned: false
+license: mit
+---
 
-## Equipe
-Luca Soares
-RGM: 2212120027
+# 📚 Recomendador Semântico de Livros
 
-## Algoritmo utilizado
-Será testado o algoritmo de LSTM,caso o algoritmo LSTM não aprenda bem os padrões sequenciais,
-será tentado um algoritmo CNN para a aplicação e comparação
-com os métodos de TF-IDF e Cossine distance(NLP). 
+Aplicação Dash para recomendar livros a partir de uma descrição livre usando NLP.
 
-## Base dos Livros
-A base da amazon, possui colunas de avaliação de clientes com grandes textos avaliativos, os algoritmos rodarão em cima disso.
-Possui 3 milhões de Avaliações, e cerca de 2 milhões e 100 mil diferentes livros.
+## Métodos comparados
 
-**Colunas Utilizadas:**
--  'Title': Tílulo do livro;
--  'Review/text': Texto avaliativo do livro;
--  'Review/time': Tempo em que a avaliação foi feita.
+1. **Similaridade de cosseno**: compara o embedding da consulta com os embeddings dos livros.
+2. **Cross-Encoder Re-Ranking**: recupera candidatos por cosseno e reordena com um Cross-Encoder.
 
-[Link da Base de Review de Livros](https://www.kaggle.com/datasets/mohamedbakhet/amazon-books-reviews?select=Books_ra)
+## Variáveis do Space
+
+```text
+DATA_REPO_ID=seu_usuario/nome_do_dataset
+BASE_FILENAME=base_livros_app.parquet
+EMBEDDINGS_FILENAME=embeddings_livros.npy
+```
+
+Se o dataset for público, não precisa de token.
+
+## Modelos padrão
+
+```text
+BI_ENCODER_MODEL_NAME=sentence-transformers/multi-qa-MiniLM-L6-cos-v1
+CROSS_ENCODER_MODEL_NAME=cross-encoder/ms-marco-MiniLM-L6-v2
+```
