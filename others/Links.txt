@@ -1,0 +1,5 @@
+Notebook Collab: https://colab.research.google.com/drive/1u1zwkq5yEkacqkA5NGSYQ0slqQFyOH9V?usp=sharing
+
+Aplicação: https://lucasoares66-recomendacao-livros.hf.space/
+
+Space Hugging Face: https://huggingface.co/spaces/LucaSoares66/Recomendacao_livros
